@@ -141,15 +141,10 @@ export default class MapWithClustering extends Component {
     });
   };
 
-  removeChildrenFromProps = (props) => {
-    const newProps = {};
-    Object.keys(props).forEach((key) => {
-      if (key !== 'children') {
-        newProps[key] = props[key];
-      }
-    });
-    return newProps;
-  };
+  removeChildrenFromProps = (props) => ({
+      ...props,
+      children: undefined,
+  });
 
   render() {
     return (
